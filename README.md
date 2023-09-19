@@ -1,4 +1,4 @@
-# 🚀Free Shopify x Next.js App Template for serverless non-embedded Apps
+# 🚀 Shopify x Next.js App Template for serverless non-embedded Apps
 
 Everything to build your next non-embedded Shopify App using NextJS.
 This Template utilizes Middleware and APIs for OAuth, so no custom server is needed.
@@ -10,8 +10,8 @@ Updated to Shopify API 2023-07
 
 - 🤩 Features
 - 👀 Requirements
-- 🤓 Getting Started
-- 🚀 Authors & Contributors
+- 🚀 Getting Started
+- 👨‍💻 Authors & Contributors
 - 🧰 Built with
 
 ## 🤩 Features
@@ -31,9 +31,9 @@ Updated to Shopify API 2023-07
 - Ngrok account
 - Upstash Redis Database
 
-## 🤓 Getting Started
+## 🚀 Getting Started
 
-- Click `Use this template` or [this link](https://github.com/carstenlebek/shopify-non-embedded-app-template/generate)
+- Click `Use this template` or [this link](https://github.com/AndrejMazhenkovski/shopify-nextjs-non-embedded-app/generate)
 - Create an App in your Shopify Partner Account
   - Set https://localhost as the App Url for now
   - Go to `App Setup` -> `Embedded app` and disable `Embed your app in Shopify admin`
@@ -47,21 +47,25 @@ Updated to Shopify API 2023-07
   - `NGROK_AUTH_TOKEN`: Your [Ngrok auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
   - `UPSTASH_REDIS_REST_URL`: Your Upstash Redis REST url.
   - `UPSTASH_REDIS_REST_TOKEN`: Your Upstash Redis REST token.
+- Run `ngrok http 3000` in terminal and use the URL inside app setup and your .env
 - Run `npm install`
 - Run `npm run dev`
+
 - Visit `https://{YOUR_APP_URL}/login` to install your app
 
-## 🚀 Authors & Contributors
+## 👨‍💻 Authors & Contributors
 
-The original author of this code is [@carstenlebek](https://github.com/carstenlebek).
+The original author of this code is [@carstenlebek](https://github.com/carstenlebek). Maintained by [@andrejmazhenkovski](https://github.com/AndrejMazhenkovski)
 
 When I launched my Shopify app [Notifeed](https://apps.shopify.com/notifeed) using Carsten's original repository, I encountered issues that were also noted by Shopify. Despite opening a pull request and submitting issues, there was no response for over a year, so I've created this soft fork to continue maintenance and improvements over the original repository
 
 #### Updates and Improvements over the original
 
-Since the inception of this soft fork, the first order of business was to update the shopify-api, as it was using an outdated version 3.0.4. Now updated to 7.6.0.
+Since the inception of this soft fork, the first order of business was to update the shopify-api, as it was using an outdated version 3.0.4. Now updated to 7.6.0 (2023-07).
 
 Fixed a bug where the app would load, but not install to the store, shortly after you uninstall it.
+
+Improved webhooks with callback handler configuration.
 
 ## 🧰 Built with
 
