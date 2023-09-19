@@ -1,16 +1,17 @@
 # 🚀Free Shopify x Next.js App Template for serverless non-embedded Apps
 
-Everything to build your next non-embedded Shopify App and Marketing pages in one place.
+Everything to build your next non-embedded Shopify App using NextJS.
 This Template utilizes Middleware and APIs for OAuth, so no custom server is needed.
 
 Intentionally barebones. 🦴
+Updated to Shopify API 2023-07
 
 ## Table of Contents
 
 - 🤩 Features
 - 👀 Requirements
 - 🤓 Getting Started
-- 🚀 One click deploy
+- 🚀 Authors & Contributors
 - 🧰 Built with
 
 ## 🤩 Features
@@ -36,6 +37,7 @@ Intentionally barebones. 🦴
 - Create an App in your Shopify Partner Account
   - Set https://localhost as the App Url for now
   - Go to `App Setup` -> `Embedded app` and disable `Embed your app in Shopify admin`
+  - Select App Distribution to "Public" (if you need the billing API for subscriptions)
 - Fill out your `.env` file
   - `SHOPIFY_API_KEY`: The Shopify Api key of the app, you have just created
   - `SHOPIFY_API_SECRET_KEY`: The Shopify Api secret key of the app, you have just created
@@ -49,13 +51,17 @@ Intentionally barebones. 🦴
 - Run `npm run dev`
 - Visit `https://{YOUR_APP_URL}/login` to install your app
 
-## 🚀 One click deploy
+## 🚀 Authors & Contributors
 
-Clone and deploy this template in one click to Vercel for free!
+The original author of this code is [@carstenlebek](https://github.com/carstenlebek).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcarstenlebek%2Fshopify-non-embedded-app-template&env=SHOPIFY_API_KEY,SHOPIFY_API_SECRET_KEY,SCOPES,MONGO_URI&envDescription=API%20keys%20needed%20for%20this%20Shopify%20App%20Template.&project-name=non-embedded-shopify-app&repo-name=non-embedded-shopify-app)
+When I launched my Shopify app [Notifeed](https://apps.shopify.com/notifeed) using Carsten's original repository, I encountered issues that were also noted by Shopify. Despite opening a pull request and submitting issues, there was no response for over a year, so I've created this soft fork to continue maintenance and improvements over the original repository
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Updates and Improvements over the original
+
+Since the inception of this soft fork, the first order of business was to update the shopify-api, as it was using an outdated version 3.0.4. Now updated to 7.6.0.
+
+Fixed a bug where the app would load, but not install to the store, shortly after you uninstall it.
 
 ## 🧰 Built with
 
