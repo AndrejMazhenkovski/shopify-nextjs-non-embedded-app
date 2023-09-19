@@ -55,7 +55,9 @@ Updated to Shopify API 2023-07
 
 ## 👨‍💻 Authors & Contributors
 
-The original author of this code is [@carstenlebek](https://github.com/carstenlebek). Maintained by [@andrejmazhenkovski](https://github.com/AndrejMazhenkovski)
+The original author of this code is [@carstenlebek](https://github.com/carstenlebek).
+Updated & Maintained by [@andrejmazhenkovski](https://github.com/AndrejMazhenkovski)
+Pull requests are open!
 
 When I launched my Shopify app [Notifeed](https://apps.shopify.com/notifeed) using Carsten's original repository, I encountered issues that were also noted by Shopify. Despite opening a pull request and submitting issues, there was no response for over a year, so I've created this soft fork to continue maintenance and improvements over the original repository
 
