@@ -10,12 +10,10 @@ const headers = {
 
 export async function middleware(req: NextRequest) {
   if (req.url.includes('/api/webhooks/')) {
-    console.log('req url goore', req.url);
     return NextResponse.next(); // Bypass the middleware
   }
 
   if (req.url.includes('/app') || req.url.includes('/graphql')) {
-    console.log('req url dole', req.url);
     const urlParams = new URLSearchParams(req.url.split('?')[1]);
 
     const query = Object.fromEntries(urlParams);

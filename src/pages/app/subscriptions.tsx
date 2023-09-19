@@ -72,9 +72,9 @@ export default function Subscriptions() {
     },
   });
 
-  //   const returnString = `${process.env.NEXT_PUBLIC_HOST}/app/subscriptions`;
-  const returnString =
-    'https://6629-46-217-123-108.ngrok-free.app/app/subscriptions';
+  const returnString = `${process.env.NEXT_PUBLIC_HOST}/app/subscriptions`;
+  // const returnString =
+  //   'https://6629-46-217-123-108.ngrok-free.app/app/subscriptions';
   console.log('Return string', returnString);
   const createSubscription = async (name, price) => {
     await createSubscriptionMutation({
