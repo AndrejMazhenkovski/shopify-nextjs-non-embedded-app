@@ -5,9 +5,8 @@ import Shopify, {
   shopifyApi,
 } from '@shopify/shopify-api';
 
-import webhooks from '../webhooks';
-import appUninstallHandler from 'src/webhooks/app_uninstalled';
 import '@shopify/shopify-api/adapters/node';
+import appUninstallHandler from '../webhooks/app_uninstalled';
 
 // Shopify.Context.initialize({
 //   API_KEY: process.env.SHOPIFY_API_KEY,

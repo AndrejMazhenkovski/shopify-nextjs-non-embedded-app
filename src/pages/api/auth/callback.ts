@@ -11,6 +11,11 @@ export default async function handler(req: ApiRequest, res: NextApiResponse) {
 
     const { session } = callbackResponse;
     await customSessionHandler.storeSession(session);
+
+    const webhooks = await shopify.webhooks.register({
+      session,
+    });
+
     // const session = await Shopify.Auth.validateAuthCallback(
     //   req,
     //   res,
@@ -22,15 +27,13 @@ export default async function handler(req: ApiRequest, res: NextApiResponse) {
     //   accessToken: session.accessToken,
     // });
 
-    // Object.keys(webhooks).forEach((webhook) => {
-    //   if (webhooks[webhook].success === true) {
-    //     console.log(`Registered ${webhook} webhook`);
-    //   } else {
-    //     console.log(
-    //       `Failed to register ${webhook} webhook: ${webhooks.result}`
-    //     );
-    //   }
-    // });
+    Object.keys(webhooks).forEach((webhook) => {
+      if (webhooks[webhook][0].success === true) {
+        console.log(`Registered ${webhook} webhook`);
+      } else {
+        console.log(`Failed to register ${webhook} webhook: ${webhooks}`);
+      }
+    });
 
     //Redirect to app after auth
     res.redirect(`/app?host=${req.query.host}&shop=${req.query.shop}`);
