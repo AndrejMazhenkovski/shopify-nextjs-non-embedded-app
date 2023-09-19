@@ -1,14 +1,23 @@
-import Shopify from "@lib/shopify";
-import { ApiRequest, NextApiResponse } from "@types";
+import shopify from '@lib/shopify';
+
+import { ApiRequest, NextApiResponse } from '@types';
 
 export default async function handler(req: ApiRequest, res: NextApiResponse) {
-    const shop = req.query.shop
+  const shop = req.query.shop;
 
-    if (!shop) {
-        res.redirect('/login')
-    }
+  if (!shop) {
+    res.redirect('/login');
+  }
 
-    const authRoute = await Shopify.Auth.beginAuth(req, res, shop, '/api/auth/offline-callback', false)
+  const authRoute = await shopify.auth.begin({
+    shop,
+    callbackPath: '/api/auth/callback',
+    isOnline: false,
+    rawRequest: req,
+    rawResponse: res,
+  });
 
-    res.redirect(authRoute)
+  // const authRoute = await Shopify.Auth.beginAuth(req, res, shop, '/api/auth/offline-callback', false)
+
+  res.redirect(authRoute);
 }

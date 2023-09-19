@@ -1,15 +1,22 @@
-import Shopify from "@lib/shopify";
-import { ApiRequest, NextApiResponse } from "@types";
+import shopify from '@lib/shopify';
+import Shopify from '@lib/shopify';
+import { ApiRequest, NextApiResponse } from '@types';
 
-export default async function handler(req: ApiRequest, res: NextApiResponse ) {
-    const shop = req.query.shop
+export default async function handler(req: ApiRequest, res: NextApiResponse) {
+  const shop = req.query.shop;
 
-    if (!shop) {
-        res.redirect('/login')
-    }
+  if (!shop) {
+    res.redirect('/login');
+  }
 
-    const authRoute = await Shopify.Auth.beginAuth(req, res, shop, '/api/auth/callback', true)
+  const authRoute = await shopify.auth.begin({
+    shop,
+    callbackPath: '/api/auth/callback',
+    isOnline: true,
+    rawRequest: req,
+    rawResponse: res,
+  });
+  // const authRoute = await Shopify.Auth.beginAuth(req, res, shop, '/api/auth/callback', true)
 
-    res.redirect(authRoute)
-
+  res.redirect(authRoute);
 }

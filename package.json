@@ -11,7 +11,8 @@
   "dependencies": {
     "@apollo/client": "^3.6.2",
     "@shopify/cli-kit": "^3.0.24",
-    "@shopify/shopify-api": "^3.0.1",
+    "@shopify/shopify-api": "^7.6.0",
+    "@shopify/shopify-app-session-storage": "^1.1.9",
     "chalk": "^4.1.2",
     "envfile": "^6.17.0",
     "graphql": "^16.5.0",
