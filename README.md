@@ -66,6 +66,7 @@ When I launched my Shopify app [Notifeed](https://apps.shopify.com/notifeed) usi
 Since the inception of this soft fork, the first order of business was to update the shopify-api, as it was using an outdated version 3.0.4. Now updated to 7.6.0 (2023-07).
 
 Fixed a bug where the app would load, but not install to the store, shortly after you uninstall it.
+Fixed a major bug that would not allow switching of apps between multiple stores on the same browser session.
 
 Improved webhooks with callback handler configuration.
 
