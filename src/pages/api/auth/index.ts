@@ -9,7 +9,7 @@ export default async function handler(req: ApiRequest, res: NextApiResponse) {
     res.redirect('/login');
   }
 
-  const authRoute = await shopify.auth.begin({
+  return await shopify.auth.begin({
     shop,
     callbackPath: '/api/auth/callback',
     isOnline: true,
@@ -18,5 +18,5 @@ export default async function handler(req: ApiRequest, res: NextApiResponse) {
   });
   // const authRoute = await Shopify.Auth.beginAuth(req, res, shop, '/api/auth/callback', true)
 
-  res.redirect(authRoute);
+  // res.redirect(authRoute);
 }

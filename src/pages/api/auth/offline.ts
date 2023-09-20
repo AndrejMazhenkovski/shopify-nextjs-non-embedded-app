@@ -11,7 +11,7 @@ export default async function handler(req: ApiRequest, res: NextApiResponse) {
 
   return await shopify.auth.begin({
     shop,
-    callbackPath: '/api/auth/callback',
+    callbackPath: '/api/auth/offline-callback',
     isOnline: false,
     rawRequest: req,
     rawResponse: res,

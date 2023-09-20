@@ -18,19 +18,29 @@ export async function middleware(req: NextRequest) {
 
     const query = Object.fromEntries(urlParams);
 
+    console.log('REQ middleware:', req.url);
+
     const { shop } = query;
 
     const sessionId = req.cookies['shopify_app_session'];
+    console.log('This is the session ID', sessionId);
 
     if (sessionId === undefined) {
+      console.log('Session is undefined.');
       if (shop) {
+        console.log(
+          'Session undefined, shop true, redirecting to auth/offline?shop'
+        );
         return NextResponse.redirect(
           `${process.env.HOST}/api/auth/offline?shop=${shop}`
         );
       }
+
+      console.log('Shop and sessionID undefined.', shop, sessionId);
       console.log('Redirect to login');
       return NextResponse.redirect(`${process.env.HOST}/login`);
     } else {
+      console.log('Session is found, fetching from upstash.');
       const { result } = await fetch(
         `${upstashRedisRestUrl}/get/${sessionId}`,
         {
@@ -41,16 +51,18 @@ export async function middleware(req: NextRequest) {
 
       const session = JSON.parse(result);
 
-      if (session) {
-        return NextResponse.next();
-      } else {
-        if (shop) {
-          return NextResponse.redirect(
-            `${process.env.HOST}/api/auth/offline?shop=${shop}`
-          );
+      if (shop) {
+        if (session && session.shop === shop) {
+          return NextResponse.next();
         } else {
-          console.log(req.method);
-          return NextResponse.redirect(`${process.env.HOST}/login`, 303);
+          if (shop) {
+            return NextResponse.redirect(
+              `${process.env.HOST}/api/auth/offline?shop=${shop}`
+            );
+          } else {
+            console.log(req.method);
+            return NextResponse.redirect(`${process.env.HOST}/login`, 303);
+          }
         }
       }
     }
