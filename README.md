@@ -49,7 +49,7 @@ Updated to Shopify API 2023-07
   - `UPSTASH_REDIS_REST_TOKEN`: Your Upstash Redis REST token.
 - Run `ngrok http 3000` in terminal and use the URL inside app setup and your .env
 - Run `npm install`
-- Run `npm run shopify app config link` to link the repo with your Shopify App in Partners Dashboard, and create app.toml file for use of CLI 3.0
+- Run `npm run shopify app config link` to link the repo with your Shopify App in Partners Dashboard (function creates app.toml file, which is needed for your app to function)
 - Run `npm run dev`
 
 - Visit `https://{YOUR_APP_URL}/login` to install your app
