@@ -6,21 +6,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "shopify": "shopify",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy"
   },
   "dependencies": {
     "@apollo/client": "^3.6.2",
     "@shopify/cli-kit": "^3.0.24",
     "@shopify/shopify-api": "^7.6.0",
-    "@shopify/shopify-app-session-storage": "^1.1.9",
+    "@shopify/app": "3.49.3",
+    "@shopify/cli": "^3",
     "chalk": "^4.1.2",
     "envfile": "^6.17.0",
     "graphql": "^16.5.0",
     "localtunnel": "^2.0.2",
     "next": "12.1.6",
     "ngrok": "^4.3.1",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.32",

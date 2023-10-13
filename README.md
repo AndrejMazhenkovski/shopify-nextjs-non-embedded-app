@@ -49,6 +49,7 @@ Updated to Shopify API 2023-07
   - `UPSTASH_REDIS_REST_TOKEN`: Your Upstash Redis REST token.
 - Run `ngrok http 3000` in terminal and use the URL inside app setup and your .env
 - Run `npm install`
+- Run `npm run shopify app config link` to link the repo with your Shopify App in Partners Dashboard, and create app.toml file for use of CLI 3.0
 - Run `npm run dev`
 
 - Visit `https://{YOUR_APP_URL}/login` to install your app
@@ -69,6 +70,8 @@ Fixed a bug where the app would load, but not install to the store, shortly afte
 Fixed a major bug that would not allow switching of apps between multiple stores on the same browser session.
 
 Improved webhooks with callback handler configuration.
+
+Migrated to CLI 3.0 (use `npm run shopify app`, and check other scripts in package.json)
 
 ## 🧰 Built with
 
